@@ -1671,6 +1671,16 @@ progress {
   color: #000;
   border-color: #badce3; }
 
+  .hero {
+    margin-bottom: 30px; /* Adds margin below the first section */
+    padding: 20px; /* Adds padding inside the first section */
+  }
+
+  .flip-section {
+    margin-top: 30px; /* Adds margin above the second section */
+    padding: 40px; /* Adds padding inside the second section */
+  }
+
 .table-warning {
   --bs-table-bg: #fff3cd;
   --bs-table-striped-bg: #f2e7c3;
