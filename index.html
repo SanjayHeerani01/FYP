@@ -32,6 +32,194 @@
 	<title>Volunteer Management</title>
 </head>
 <body>
+	<style>
+		/* General Reset */
+		* {
+		  margin: 0;
+		  padding: 0;
+		  box-sizing: border-box;
+		  font-family: Arial, sans-serif;
+		}
+	
+		/* Chatbot Button */
+		.chatbot-button {
+		  position: fixed;
+		  bottom: 20px;
+		  right: 20px;
+		  background-color: #ff6f61;
+		  color: white;
+		  border: none;
+		  border-radius: 50%;
+		  width: 60px;
+		  height: 60px;
+		  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+		  cursor: pointer;
+		  animation: bounce 2s infinite;
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+		  font-size: 24px;
+		}
+	
+		/* Button Bounce Animation */
+		@keyframes bounce {
+		  0%, 100% {
+			transform: translateY(0);
+		  }
+		  50% {
+			transform: translateY(-10px);
+		  }
+		}
+	
+		/* Chatbot Window */
+		.chatbot-window {
+		  position: fixed;
+		  bottom: 80px;
+		  right: 20px;
+		  width: 300px;
+		  height: 400px;
+		  background-color: #f4f4f9;
+		  border-radius: 15px;
+		  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+		  display: none;
+		  flex-direction: column;
+		  overflow: hidden;
+		}
+	
+		/* Header */
+		.chatbot-header {
+		  background-color: #ff6f61;
+		  color: white;
+		  padding: 15px;
+		  font-size: 16px;
+		  text-align: center;
+		  font-weight: bold;
+		}
+	
+		/* Chat Area */
+		.chatbot-messages {
+		  flex: 1;
+		  padding: 10px;
+		  overflow-y: auto;
+		}
+	
+		/* Input Section */
+		.chatbot-input {
+		  padding: 10px;
+		  display: flex;
+		  gap: 10px;
+		  border-top: 1px solid #ccc;
+		}
+	
+		.chatbot-input input {
+		  flex: 1;
+		  padding: 8px;
+		  border: 1px solid #ccc;
+		  border-radius: 5px;
+		}
+	
+		.chatbot-input button {
+		  background-color: #ff6f61;
+		  color: white;
+		  border: none;
+		  padding: 8px 15px;
+		  border-radius: 5px;
+		  cursor: pointer;
+		  transition: background-color 0.3s;
+		}
+	
+		.chatbot-input button:hover {
+		  background-color: #ff4d3b;
+		}
+	
+		/* Notification Bubble */
+		.chatbot-notification {
+		  position: absolute;
+		  top: 5px;
+		  right: 5px;
+		  background-color: #ff4d3b;
+		  color: white;
+		  font-size: 12px;
+		  width: 20px;
+		  height: 20px;
+		  border-radius: 50%;
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+		  animation: pulse 1.5s infinite;
+		}
+	
+		@keyframes pulse {
+		  0%, 100% {
+			transform: scale(1);
+		  }
+		  50% {
+			transform: scale(1.2);
+		  }
+		}
+	  </style>
+
+	  <!-- Chatbot Button -->
+	  <button class="chatbot-button" id="chatbot-button">
+		💬
+		<div class="chatbot-notification" id="chatbot-notification">1</div>
+	  </button>
+	
+	  <!-- Chatbot Window -->
+	  <div class="chatbot-window" id="chatbot-window">
+		<div class="chatbot-header">Hi! I'm your Assistant</div>
+		<div class="chatbot-messages" id="chatbot-messages">
+		  <p><strong>Bot:</strong> Please sign in to start chatting!</p>
+		</div>
+		<div class="chatbot-input" id="chatbot-input">
+		  <input type="text" id="chat-input" placeholder="Type your message..." disabled>
+		  <button id="send-button" disabled>Send</button>
+		</div>
+	  </div>
+	
+	  <script>
+		// Elements
+		const chatbotButton = document.getElementById('chatbot-button');
+		const chatbotWindow = document.getElementById('chatbot-window');
+		const chatInput = document.getElementById('chat-input');
+		const sendButton = document.getElementById('send-button');
+		const chatbotMessages = document.getElementById('chatbot-messages');
+		const notification = document.getElementById('chatbot-notification');
+	
+		// Open/Close Chatbot Window
+		chatbotButton.addEventListener('click', () => {
+		  chatbotWindow.style.display = chatbotWindow.style.display === 'flex' ? 'none' : 'flex';
+		  notification.style.display = 'none';
+		});
+	
+		// Mock Sign-In Process
+		const signInUser = () => {
+		  const message = document.createElement('p');
+		  message.innerHTML = `<strong>Bot:</strong> Welcome! How can I assist you today?`;
+		  chatbotMessages.appendChild(message);
+		  chatInput.disabled = false;
+		  sendButton.disabled = false;
+		};
+	
+		// Simulate Sign-In on First Interaction
+		setTimeout(() => {
+		  const message = document.createElement('p');
+		  message.innerHTML = `<strong>Bot:</strong> Please sign in to continue!`;
+		  chatbotMessages.appendChild(message);
+		  setTimeout(() => signInUser(), 3000); // Auto-sign-in after 3 seconds
+		}, 1000);
+	
+		// Send Message
+		sendButton.addEventListener('click', () => {
+		  const userMessage = chatInput.value;
+		  if (userMessage.trim() !== '') {
+			const message = document.createElement('p');
+			message.innerHTML = `<strong>You:</strong> ${userMessage}`;
+			chatbotMessages.appendChild(message);
+			chatInput.value = '';
+		  }
+		});
+	  </script>
 
 	<div class="site-mobile-menu site-navbar-target">
 		<div class="site-mobile-menu-header">
@@ -121,7 +309,7 @@
 			<div class="row">
 				<div class="col-lg-7 mx-auto text-center">
 					<span class="subheading-white mb-3 text-white" data-aos="fade-up">Help Now</span>
-					<h3 class="mb-4 heading text-white" data-aos="fade-up">Let's Help The Unfortunate People </h3>
+					<h3 class="mb-4 heading text-white" data-aos="fade-up">Join Hands to Make a Difference </h3>
 					
 				</div>		
 			</div>		
@@ -155,10 +343,46 @@
 		  </div>
 		</div>
 	  </div>
-	  
-
-	
 	</div>
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volunteer Management</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Join Us and Make a Difference</h1>
+    <div class="card-container">
+      <!-- Community Service -->
+      <div class="card">
+        <div class="icon"><i class="fas fa-people-arrows"></i></div>
+        <h3>Community Service</h3>
+        <p>Work together to help your community thrive.</p>
+      </div>
+      <!-- Event Coordination -->
+      <div class="card">
+        <div class="icon"><i class="fas fa-calendar-alt"></i></div>
+        <h3>Event Coordination</h3>
+        <p>Organize events and bring people together.</p>
+      </div>
+      <!-- Volunteer Recognition -->
+      <div class="card">
+        <div class="icon"><i class="fas fa-star"></i></div>
+        <h3>Volunteer Recognition</h3>
+        <p>Celebrate the achievements of volunteers.</p>
+      </div>
+      <!-- Team Collaboration -->
+      <div class="card">
+        <div class="icon"><i class="fas fa-users"></i></div>
+        <h3>Team Collaboration</h3>
+        <p>Work hand-in-hand with like-minded individuals.</p>
+      </div>
+    </div>
+  </div>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 	<footer class="footer" style="background-color: #1f2937; color: #e5e7eb; padding: 20px; text-align: center; position: relative; overflow: hidden;">
 		<div class="container">
