@@ -32,194 +32,6 @@
 	<title>Volunteer Management</title>
 </head>
 <body>
-	<style>
-		/* General Reset */
-		* {
-		  margin: 0;
-		  padding: 0;
-		  box-sizing: border-box;
-		  font-family: Arial, sans-serif;
-		}
-	
-		/* Chatbot Button */
-		.chatbot-button {
-		  position: fixed;
-		  bottom: 20px;
-		  right: 20px;
-		  background-color: #ff6f61;
-		  color: white;
-		  border: none;
-		  border-radius: 50%;
-		  width: 60px;
-		  height: 60px;
-		  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-		  cursor: pointer;
-		  animation: bounce 2s infinite;
-		  display: flex;
-		  justify-content: center;
-		  align-items: center;
-		  font-size: 24px;
-		}
-	
-		/* Button Bounce Animation */
-		@keyframes bounce {
-		  0%, 100% {
-			transform: translateY(0);
-		  }
-		  50% {
-			transform: translateY(-10px);
-		  }
-		}
-	
-		/* Chatbot Window */
-		.chatbot-window {
-		  position: fixed;
-		  bottom: 80px;
-		  right: 20px;
-		  width: 300px;
-		  height: 400px;
-		  background-color: #f4f4f9;
-		  border-radius: 15px;
-		  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-		  display: none;
-		  flex-direction: column;
-		  overflow: hidden;
-		}
-	
-		/* Header */
-		.chatbot-header {
-		  background-color: #ff6f61;
-		  color: white;
-		  padding: 15px;
-		  font-size: 16px;
-		  text-align: center;
-		  font-weight: bold;
-		}
-	
-		/* Chat Area */
-		.chatbot-messages {
-		  flex: 1;
-		  padding: 10px;
-		  overflow-y: auto;
-		}
-	
-		/* Input Section */
-		.chatbot-input {
-		  padding: 10px;
-		  display: flex;
-		  gap: 10px;
-		  border-top: 1px solid #ccc;
-		}
-	
-		.chatbot-input input {
-		  flex: 1;
-		  padding: 8px;
-		  border: 1px solid #ccc;
-		  border-radius: 5px;
-		}
-	
-		.chatbot-input button {
-		  background-color: #ff6f61;
-		  color: white;
-		  border: none;
-		  padding: 8px 15px;
-		  border-radius: 5px;
-		  cursor: pointer;
-		  transition: background-color 0.3s;
-		}
-	
-		.chatbot-input button:hover {
-		  background-color: #ff4d3b;
-		}
-	
-		/* Notification Bubble */
-		.chatbot-notification {
-		  position: absolute;
-		  top: 5px;
-		  right: 5px;
-		  background-color: #ff4d3b;
-		  color: white;
-		  font-size: 12px;
-		  width: 20px;
-		  height: 20px;
-		  border-radius: 50%;
-		  display: flex;
-		  justify-content: center;
-		  align-items: center;
-		  animation: pulse 1.5s infinite;
-		}
-	
-		@keyframes pulse {
-		  0%, 100% {
-			transform: scale(1);
-		  }
-		  50% {
-			transform: scale(1.2);
-		  }
-		}
-	  </style>
-
-	  <!-- Chatbot Button -->
-	  <button class="chatbot-button" id="chatbot-button">
-		💬
-		<div class="chatbot-notification" id="chatbot-notification">1</div>
-	  </button>
-	
-	  <!-- Chatbot Window -->
-	  <div class="chatbot-window" id="chatbot-window">
-		<div class="chatbot-header">Hi! I'm your Assistant</div>
-		<div class="chatbot-messages" id="chatbot-messages">
-		  <p><strong>Bot:</strong> Please sign in to start chatting!</p>
-		</div>
-		<div class="chatbot-input" id="chatbot-input">
-		  <input type="text" id="chat-input" placeholder="Type your message..." disabled>
-		  <button id="send-button" disabled>Send</button>
-		</div>
-	  </div>
-	
-	  <script>
-		// Elements
-		const chatbotButton = document.getElementById('chatbot-button');
-		const chatbotWindow = document.getElementById('chatbot-window');
-		const chatInput = document.getElementById('chat-input');
-		const sendButton = document.getElementById('send-button');
-		const chatbotMessages = document.getElementById('chatbot-messages');
-		const notification = document.getElementById('chatbot-notification');
-	
-		// Open/Close Chatbot Window
-		chatbotButton.addEventListener('click', () => {
-		  chatbotWindow.style.display = chatbotWindow.style.display === 'flex' ? 'none' : 'flex';
-		  notification.style.display = 'none';
-		});
-	
-		// Mock Sign-In Process
-		const signInUser = () => {
-		  const message = document.createElement('p');
-		  message.innerHTML = `<strong>Bot:</strong> Welcome! How can I assist you today?`;
-		  chatbotMessages.appendChild(message);
-		  chatInput.disabled = false;
-		  sendButton.disabled = false;
-		};
-	
-		// Simulate Sign-In on First Interaction
-		setTimeout(() => {
-		  const message = document.createElement('p');
-		  message.innerHTML = `<strong>Bot:</strong> Please sign in to continue!`;
-		  chatbotMessages.appendChild(message);
-		  setTimeout(() => signInUser(), 3000); // Auto-sign-in after 3 seconds
-		}, 1000);
-	
-		// Send Message
-		sendButton.addEventListener('click', () => {
-		  const userMessage = chatInput.value;
-		  if (userMessage.trim() !== '') {
-			const message = document.createElement('p');
-			message.innerHTML = `<strong>You:</strong> ${userMessage}`;
-			chatbotMessages.appendChild(message);
-			chatInput.value = '';
-		  }
-		});
-	  </script>
 
 	<div class="site-mobile-menu site-navbar-target">
 		<div class="site-mobile-menu-header">
@@ -230,7 +42,21 @@
 		<div class="site-mobile-menu-body"></div>
 	</div>
 
-	<my-header></my-header>
+	<nav class="navbar">
+		<div class="navbar-logo">Volunteer<span>r</span></div>
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">News</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+		<div class="auth-buttons">
+			<button>Sign In</button>
+			<button>Sign Up</button>
+			<button class="chatbot-button">Chatbot</button>
+		</div>
+	</nav>
+
 
 	<div class="hero overlay" style="background-image: url('images/hero_2.jpg')">
 		<div class="container">
@@ -285,43 +111,11 @@
 		</div>		
 	</div>
 	<div class="auth-sections py-5" style="background-color: #f8f9fa;">
-		<div class="container">
-		  <div class="row text-center">
-			<!-- Volunteer Section -->
-			<div class="col-lg-6 mb-4" data-aos="fade-up">
-			  <div class="auth-box volunteer-box shadow p-4 rounded">
-				<h3 class="heading mb-3">Join as a Volunteer</h3>
-				<p class="text-muted mb-4">Make an impact by contributing your time and skills to meaningful causes.</p>
-				<div class="auth-buttons">
-				  <a href="#" class="btn btn-primary btn-hover mb-2">Sign In</a>
-				  <a href="#" class="btn btn-outline-primary btn-hover">Sign Up</a>
-				</div>
-			  </div>
-			</div>
-			<!-- Organization Section -->
-			<div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-			  <div class="auth-box organization-box shadow p-4 rounded">
-				<h3 class="heading mb-3">Join as an Organization</h3>
-				<p class="text-muted mb-4">Connect with passionate volunteers and grow your impact effectively.</p>
-				<div class="auth-buttons">
-				  <a href="#" class="btn btn-success btn-hover mb-2">Sign In</a>
-				  <a href="#" class="btn btn-outline-success btn-hover">Sign Up</a>
-				</div>
-			  </div>
-			</div>
+		
 		  </div>
 		</div>
 	  </div>
 	</div>
-	<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Volunteer Management</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
   <div class="container">
     <h1 class="title">Join Us and Make a Difference</h1>
     <div class="card-container">
@@ -352,10 +146,34 @@
     </div>
   </div>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-	
 	  
-<my-footer></my-footer>
+		<!-- Include Font Awesome -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" crossorigin="anonymous"></script>
+		<footer>
+			<div class="footer-left">
+				<h3>Follow Us</h3>
+				<div class="social-icons">
+					<a href="#" aria-label="Facebook"><img src="https://img.icons8.com/color/48/facebook.png" alt="Facebook"></a>
+					<a href="#" aria-label="Instagram"><img src="https://img.icons8.com/color/48/instagram-new.png" alt="Instagram"></a>
+					<a href="#" aria-label="LinkedIn"><img src="https://img.icons8.com/color/48/linkedin.png" alt="LinkedIn"></a>
+					<a href="#" aria-label="YouTube"><img src="https://img.icons8.com/color/48/youtube-play.png" alt="YouTube"></a>
+				</div>
+			</div>
+			<div class="footer-links">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">News</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
+			<div class="footer-contact">
+				<p>Email: samooalina339@gmail.com</p>
+				<p>Contact: +92 3322067460</p>
+			</div>
+		</footer>
+	  
+
 
 
 
@@ -380,6 +198,5 @@
 	<script src="js/navbar.js"></script>
 	<script src="js/counter.js"></script>
 	<script src="js/custom.js"></script>
-	<script src="main.js"></script>
 </body>
 </html>
