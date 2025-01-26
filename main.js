@@ -145,16 +145,7 @@ class MyFooter extends HTMLElement {
 	  
 		<!-- Include Font Awesome -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" crossorigin="anonymous"></script>
-	  </footer>
-	  
-
-
-
-
-
-
-	
-       `
+	  </footer>`
     }
 }
 customElements.define('my-header', MyHeader);
