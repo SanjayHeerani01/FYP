@@ -10052,7 +10052,7 @@ blockquote {
   margin-left: 10px; }
 
 .flip-section {
-  background-color: rgba(89, 136, 107, 0.1);
+  
   background-size: cover;
   background-position: center center;
   position: relative; }
@@ -10094,7 +10094,7 @@ blockquote {
     border-bottom-right-radius: 0 !important; }
   .causes-item .progress {
     border-radius: 30px;
-    background-color: rgba(89, 136, 107, 0.1);
+  
     overflow: auto !important; }
     .causes-item .progress .progress-bar {
       border-radius: 30px;
@@ -10149,7 +10149,7 @@ blockquote {
   line-height: 40px;
   font-weight: 700;
   border-radius: 50%;
-  background: rgba(89, 136, 107, 0.1);
+ 
   color: #59886b;
   text-align: center; }
   .custom-pagination a:hover, .custom-pagination a.active {
