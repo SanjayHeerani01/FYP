@@ -10,11 +10,11 @@ class MyHeader extends HTMLElement {
 <nav class="nav" style="margin: 0; padding: 0;">
 <ul style="list-style: none; display: flex; gap: 20px; margin: 0; padding: 0;">
 <li><a href="#" style="text-decoration: none; color: white; font-size: 16px;" class="active">Home</a></li>
-<li><a href="#pages" style="text-decoration: none; color: white; font-size: 16px;">Pages</a></li>
-<li><a href="#" style="text-decoration: none; color: white; font-size: 16px;">Causes</a></li>
-<li><a href="#" style="text-decoration: none; color: white; font-size: 16px;">Event</a></li>
-<li><a href="#" style="text-decoration: none; color: white; font-size: 16px;">Blog</a></li>
-<li><a href="#" style="text-decoration: none; color: white; font-size: 16px;">Contact</a></li>
+<li><a href="news.html" style="text-decoration: none; color: white; font-size: 16px;">Pages</a></li>
+<li><a href="about.html" style="text-decoration: none; color: white; font-size: 16px;">Causes</a></li>
+<li><a href="contact.html" style="text-decoration: none; color: white; font-size: 16px;">Event</a></li>
+<li><a href="causes.html" style="text-decoration: none; color: white; font-size: 16px;">Blog</a></li>
+
 </ul>
 </nav>
 </header>
