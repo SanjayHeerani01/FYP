@@ -1,15 +1,8 @@
 class MyHeader extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Volunteer Website</title>
-    <link rel="stylesheet" href="styles.css">
 
-   <header style="display: flex; justify-content: space-between; align-items: center; background-color: #1a1a1a; padding: 20px; color: white;">
+<header style="display: flex; justify-content: space-between; align-items: center; background-color: #1a1a1a; padding: 20px; color: white;">
 <div class="logo" style="margin: 0;">
 <h1 style="margin: 0; font-size: 24px;">Volunteer</h1>
 <p style="margin: 0; font-size: 14px; color: #f05454;">Charity & Fundraising</p>
@@ -17,7 +10,7 @@ class MyHeader extends HTMLElement {
 <nav class="nav" style="margin: 0; padding: 0;">
 <ul style="list-style: none; display: flex; gap: 20px; margin: 0; padding: 0;">
 <li><a href="#" style="text-decoration: none; color: white; font-size: 16px;" class="active">Home</a></li>
-<li><a href="#" style="text-decoration: none; color: white; font-size: 16px;">Pages</a></li>
+<li><a href="#pages" style="text-decoration: none; color: white; font-size: 16px;">Pages</a></li>
 <li><a href="#" style="text-decoration: none; color: white; font-size: 16px;">Causes</a></li>
 <li><a href="#" style="text-decoration: none; color: white; font-size: 16px;">Event</a></li>
 <li><a href="#" style="text-decoration: none; color: white; font-size: 16px;">Blog</a></li>
