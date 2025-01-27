@@ -64,5 +64,7 @@ class MyFooter extends HTMLElement {
 			</div>
 		</footer>
        `
+    }
+}
 customElements.define('my-header', MyHeader);
 customElements.define('my-footer',MyFooter);
