@@ -1,38 +1,81 @@
 class MyHeader extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-        <nav class="site-nav">
-    <div class="container">
-\t\t\t<div class="menu-bg-wrap">
-\t\t\t\t<div class="site-navigation">
-\t\t\t\t\t<div class="row g-0 align-items-center">
-\t\t\t\t\t\t<div class="col-2">
-\t\t\t\t\t\t\t<a href="index.html" class="logo m-0 float-start text-white">Volunteer</a>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t\t<div class="col-8 text-center">
-\t\t\t\t\t\t\t<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
-\t\t\t\t\t\t\t\t<li class="active"><a href="index.html">Home</a></li>
-\t\t\t\t\t\t\t\t<li><a href="about.html">About</a></li>
-\t\t\t\t\t\t\t\t<li><a href="news.html">News</a></li>
-\t\t\t\t\t\t\t\t<li><a href="contact.html">Contact</a></li>
-\t\t\t\t\t\t\t</ul>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t\t<div class="col-2 text-end">
-\t\t\t\t\t\t\t<a href="#" class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light">
-\t\t\t\t\t\t\t\t<span></span>
-\t\t\t\t\t\t\t</a>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
 
-\t\t\t\t\t\t\t<a href="#" class="call-us d-flex align-items-center">
-\t\t\t\t\t\t\t\t<span class="icon-phone"></span>
-\t\t\t\t\t\t\t\t<span>0332-2067460</span>
-\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 20px;
+    color: white;
+}
 
-\t\t\t\t</div>
-\t\t\t</div>
-\t\t</div>
-\t</nav>        
+.header .logo h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.header .logo p {
+    margin: 0;
+    font-size: 14px;
+    color: #f05454;
+}
+
+.header .nav ul {
+    list-style: none;
+ display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.header .nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.header .nav ul li a.active,
+.header .nav ul li a:hover {
+    color: #f05454;
+}
+
+</style>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">
+            <h1>Volunteer</h1>
+            <p>Charity & Fundraising</p>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Pages</a></li>
+                <li><a href="#">Causes</a></li>
+                <li><a href="#">Event</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+      
         `
     }
 }
