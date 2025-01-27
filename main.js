@@ -8,9 +8,8 @@ class MyHeader extends HTMLElement {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Volunteer Website</title>
     <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<style>
+
+    <style>
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -57,6 +56,9 @@ body {
 }
 
 </style>
+</head>
+<body>
+
     <!-- Header Section -->
     <header class="header">
         <div class="logo">
