@@ -717,7 +717,7 @@ progress {
 			background: #f4f4f9;
 		}
 
-		/* Navbar styles */
+		/* Navbar styles 
 		.navbar {
 			display: flex;
 			justify-content: space-between;
@@ -808,7 +808,7 @@ progress {
 			50% {
 				transform: scale(1.05);
 			}
-		}
+		}*/
 
 .row {
   --bs-gutter-x: 1.5rem;
