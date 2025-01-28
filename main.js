@@ -1,70 +1,91 @@
 class MyHeader extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
+            <header class="header">
+                <div class="logo">
+                    <h1>Volunteer</h1>
+                    <p>Charity & Fundraising</p>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+        `;
 
-        <nav class="site-nav">
-    <div class="container">
-\t\t\t<div class="menu-bg-wrap">
-\t\t\t\t<div class="site-navigation">
-\t\t\t\t\t<div class="row g-0 align-items-center">
-\t\t\t\t\t\t<div class="col-2">
-\t\t\t\t\t\t\t<a href="index.html" class="logo m-0 float-start text-white">Volunteer</a>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t\t<div class="col-8 text-center">
-\t\t\t\t\t\t\t<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
-\t\t\t\t\t\t\t\t<li class="active"><a href="index.html">Home</a></li>
-\t\t\t\t\t\t\t\t<li><a href="about.html">About</a></li>
-\t\t\t\t\t\t\t\t<li><a href="news.html">News</a></li>
-\t\t\t\t\t\t\t\t<li><a href="contact.html">Contact</a></li>
-\t\t\t\t\t\t\t</ul>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t\t<div class="col-2 text-end">
-\t\t\t\t\t\t\t<a href="#" class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light">
-\t\t\t\t\t\t\t\t<span></span>
-\t\t\t\t\t\t\t</a>
+        // Add active class based on the current page
+        const currentPage = window.location.pathname.split('/').pop(); // Get the current file name
+        const links = this.querySelectorAll('.nav a');
 
-\t\t\t\t\t\t\t<a href="#" class="call-us d-flex align-items-center">
-\t\t\t\t\t\t\t\t<span class="icon-phone"></span>
-\t\t\t\t\t\t\t\t<span>0332-2067460</span>
-\t\t\t\t\t\t\t</a>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-
-\t\t\t\t</div>
-\t\t\t</div>
-\t\t</div>
-\t</nav>        
-        `
+        links.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
     }
 }
+
+customElements.define('my-header', MyHeader);
+
+
 class MyFooter extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-       <footer>
-			<div class="footer-left">
-				<h3>Follow Us</h3>
-				<div class="social-icons">
-					<a href="#" aria-label="Facebook"><img src="https://img.icons8.com/color/48/facebook.png" alt="Facebook"></a>
-					<a href="#" aria-label="Instagram"><img src="https://img.icons8.com/color/48/instagram-new.png" alt="Instagram"></a>
-					<a href="#" aria-label="LinkedIn"><img src="https://img.icons8.com/color/48/linkedin.png" alt="LinkedIn"></a>
-					<a href="#" aria-label="YouTube"><img src="https://img.icons8.com/color/48/youtube-play.png" alt="YouTube"></a>
-				</div>
-			</div>
-			<div class="footer-links">
-				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">News</a></li>
-					<li><a href="#">Contact</a></li>
-				</ul>
-			</div>
-			<div class="footer-contact">
-				<p>Email: samooalina339@gmail.com</p>
-				<p>Contact: +92 3322067460</p>
-			</div>
-		</footer>
-       `
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-section about">
+            <h3>About Us</h3>
+            <p>Volunteering is an important and honorable way to help others. It can be a great way to make a difference in the world.</p>
+        </div>
+        <div class="footer-section recent-posts">
+            <h3>Recent Posts</h3>
+            <ul>
+                <li><a href="#">Getting Helpless Childs Education</a> - July 5, 2023 / 0 Comments</li>
+                <li><a href="#">Inspiring Volunteers</a> - July 5, 2023 / 0 Comments</li>
+            </ul>
+        </div>
+        <div class="footer-section quick-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Our Gallery</a></li>
+                <li><a href="#">Our Testimonial</a></li>
+                <li><a href="#">Our Causes</a></li>
+                <li><a href="#">Our Features</a></li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-section popular-tags">
+            <h3>Popular Tags</h3>
+            <div class="tags">
+                <a href="#">awesome</a>
+                <a href="#">charity</a>
+                <a href="#">children</a>
+                <a href="#">css</a>
+                <a href="#">development</a>
+                <a href="#">donations</a>
+                <a href="#">foundation</a>
+                <a href="#">help</a>
+                <a href="#">housing</a>
+                <a href="#">html</a>
+                <a href="#">money</a>
+                <a href="#">organisations</a>
+                <a href="#">photography</a>
+                <a href="#">php</a>
+                <a href="#">spendings</a>
+                <a href="#">strategy</a>
+            </div>
+        </div>
+    </footer>`;
     }
 }
-customElements.define('my-header', MyHeader);
-customElements.define('my-footer',MyFooter);
+
+customElements.define('my-footer', MyFooter);
