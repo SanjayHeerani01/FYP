@@ -90,67 +90,66 @@ class MyFooter extends HTMLElement {
 
 customElements.define('my-footer', MyFooter);
 
+You are correct that the CSS file does not contain the image sources, and the HTML code you provided earlier contains the image sources.
+
+To extend the class Slidebar extends HTMLElement code to include the image sources, you can modify the code as follows:
+
+
 class Slidebar extends HTMLElement {
-    connectedCallback() {
-        this.innerHTML = `
- <div class="instagram-slider-wrap" data-aos="fade-up" data-aos-delay="200">
+  connectedCallback() {
+    this.innerHTML = `
+      <link rel="stylesheet" href="style.css">
+      <div class="instagram-slider-wrap" data-aos="fade-up" data-aos-delay="200">
         <div class="instagram-slider" id="instagram-slider">
-
-            <div class="item">
-                <a class="instagram-item">
-                    <span class="icon-instagram"></span>
-                    <img src="images/vol9.jpg" alt="Image" class="img-fluid">
-                </a>
-            </div>
-
-            <div class="item">
-                <a class="instagram-item">
-                    <span class="icon-instagram"></span>
-                    <img src="images/vol2.jpg" alt="Image" class="img-fluid">
-                </a>
-            </div>
-
-            <div class="item">
-                <a class="instagram-item">
-                    <span class="icon-instagram"></span>
-                    <img src="images/vol10.jpg" alt="Image" class="img-fluid">
-                </a>
-            </div>
-
-            <div class="item">
-                <a class="instagram-item">
-                    <span class="icon-instagram"></span>
-                    <img src="images/vol4.jpg" alt="Image" class="img-fluid">
-                </a>
-            </div>
-
-            <div class="item">
-                <a class="instagram-item">
-                    <span class="icon-instagram"></span>
-                    <img src="images/vol5.jpg" alt="Image" class="img-fluid">
-                </a>
-            </div>
-
-            <div class="item">
-                <a class="instagram-item">
-                    <span class="icon-instagram"></span>
-                    <img src="images/vol6.jpg" alt="Image" class="img-fluid">
-                </a>
-            </div>
-
-            <div class="item">
-                <a class="instagram-item">
-                    <span class="icon-instagram"></span>
-                    <img src="images/vol12.jpg" alt="Image" class="img-fluid">
-                </a>
-            </div>
-
-
+          <div class="item">
+            <a class="instagram-item">
+              <span class="icon-instagram"></span>
+              <img src="images/vol9.jpg" alt="Image" class="img-fluid">
+            </a>
+          </div>
+          <div class="item">
+            <a class="instagram-item">
+              <span class="icon-instagram"></span>
+              <img src="images/vol2.jpg" alt="Image" class="img-fluid">
+            </a>
+          </div>
+          <div class="item">
+            <a class="instagram-item">
+              <span class="icon-instagram"></span>
+              <img src="images/vol10.jpg" alt="Image" class="img-fluid">
+            </a>
+          </div>
+          <div class="item">
+            <a class="instagram-item">
+              <span class="icon-instagram"></span>
+              <img src="images/vol4.jpg" alt="Image" class="img-fluid">
+            </a>
+          </div>
+          <div class="item">
+            <a class="instagram-item">
+              <span class="icon-instagram"></span>
+              <img src="images/vol5.jpg" alt="Image" class="img-fluid">
+            </a>
+          </div>
+          <div class="item">
+            <a class="instagram-item">
+              <span class="icon-instagram"></span>
+              <img src="images/vol6.jpg" alt="Image" class="img-fluid">
+            </a>
+          </div>
+          <div class="item">
+            <a class="instagram-item">
+              <span class="icon-instagram"></span>
+              <img src="images/vol12.jpg" alt="Image" class="img-fluid">
+            </a>
+          </div>
         </div>
-    </div>
-
-</div>`;
-    }
+      </div>
+    `;
+  }
 }
+
 customElements.define('my-slidebar', Slidebar);
+
+
 
