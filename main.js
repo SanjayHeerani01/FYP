@@ -91,6 +91,27 @@ class MyFooter extends HTMLElement {
 customElements.define('my-footer', MyFooter);
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    var slider = tns({
+        container: "#instagram-slider",
+        items: 5,
+        slideBy: "page",
+        autoplay: true,
+        controls: false,
+        nav: false,
+        responsive: {
+            0: {
+                items: 2
+            },
+            600: {
+                items: 3
+            },
+            900: {
+                items: 5
+            }
+        }
+    });
+});
 
 
 class Slidebar extends HTMLElement {
