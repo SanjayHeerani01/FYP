@@ -90,9 +90,7 @@ class MyFooter extends HTMLElement {
 
 customElements.define('my-footer', MyFooter);
 
-You are correct that the CSS file does not contain the image sources, and the HTML code you provided earlier contains the image sources.
 
-To extend the class Slidebar extends HTMLElement code to include the image sources, you can modify the code as follows:
 
 
 class Slidebar extends HTMLElement {
